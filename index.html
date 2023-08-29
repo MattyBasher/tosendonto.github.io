@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Website</title>
+    <script>const allowedDomain = "example.com"; // Replace with your allowed domain
+
+        function checkReferringDomain() {
+            const referringDomain = document.referrer
+                ? new URL(document.referrer).hostname
+                : null;
+
+            if (referringDomain !== allowedDomain) {
+                window.location.href = "https://www.bing.com";
+            }
+            else {
+                window.location.href = "https://www.google.com";
+            }
+        }
+
+        // Call the function when the page loads
+        window.onload = checkReferringDomain;
+    </script>
+</head>
+<body>
+    <!-- Your website content here -->
+</body>
+</html>
